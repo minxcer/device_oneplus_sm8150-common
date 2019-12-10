@@ -389,10 +389,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstdc++.vendor
 
-# Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.2-service.oneplus_msmnile
-
 # AOT Preload
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
