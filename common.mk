@@ -434,7 +434,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     OnePlusCamera \
     OnePlusCameraService \
-    CameraPackage
+    CameraPackage \
+    OnePlusGallery
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/addon.d/51-oneplus-camera.sh:system/addon.d/51-oneplus-camera.sh  \
