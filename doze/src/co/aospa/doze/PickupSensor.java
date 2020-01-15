@@ -1,6 +1,7 @@
 /*
- * Copyright (c) 2015 The CyanogenMod Project
+ * Copyright (C) 2015 The CyanogenMod Project
  *               2017-2018 The LineageOS Project
+ *               2020 Paranoid Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.doze;
+package co.aospa.doze;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -23,6 +24,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.util.Log;
 
 import java.util.concurrent.ExecutorService;
@@ -38,6 +40,7 @@ public class PickupSensor implements SensorEventListener {
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
+    private String mSensorName;
     private Context mContext;
     private ExecutorService mExecutorService;
 
@@ -46,7 +49,8 @@ public class PickupSensor implements SensorEventListener {
     public PickupSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = Utils.getSensor(mSensorManager, "oneplus.sensor.pickup");
+        mSensorName = SystemProperties.get("ro.sensor.pickup");
+        mSensor = DozeUtils.getSensor(mSensorManager, mSensorName);
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
@@ -66,7 +70,7 @@ public class PickupSensor implements SensorEventListener {
         mEntryTimestamp = SystemClock.elapsedRealtime();
 
         if (event.values[0] == 1) {
-            Utils.launchDozePulse(mContext);
+            DozeUtils.launchDozePulse(mContext);
         }
     }
 
