@@ -1,0 +1,3 @@
+# OnePlus camera client_package_name
+allow system_server camera_data_file:dir search;
+allow system_server camera_data_file:file { read open getattr };
