@@ -411,6 +411,13 @@ vendor/lib/libmmcamera_faceproc2.so
 vendor/lib64/libmmcamera_faceproc.so
 vendor/lib64/libmmcamera_faceproc2.so
 
+# Sensor
+vendor/bin/hw/android.hardware.sensors@1.0-service
+vendor/etc/init/android.hardware.sensors@1.0-service.rc
+vendor/lib/hw/android.hardware.sensors@1.0-impl.so
+vendor/lib64/hw/android.hardware.sensors@1.0-impl.so
+vendor/lib64/libsensorndkbridge.so
+
 # CDSP
 vendor/bin/cdsprpcd
 vendor/lib/libcdsp_default_listener.so
