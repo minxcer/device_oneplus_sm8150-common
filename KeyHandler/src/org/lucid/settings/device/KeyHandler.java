@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package org.lucid.settings.device;
 
 import android.content.Context;
 import android.media.AudioManager;

@@ -13,5 +13,5 @@
 
 <resources>
     <!-- Device specific doze package -->
-    <string name="config_customDozePackage">org.lineageos.settings.doze/org.lineageos.settings.doze.DozeSettingsActivity</string>
+    <string name="config_customDozePackage">org.lucid.settings.doze/org.lucid.settings.doze.DozeSettingsActivity</string>
 </resources>
